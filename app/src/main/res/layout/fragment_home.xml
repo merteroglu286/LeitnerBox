@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leitner Kutusu"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/logoutButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_logout_24"
+                    style="@style/imageButtonStyle"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:columnCount="2"
+                app:rowCount="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:id="@+id/firstBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gray"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="1. kutu"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/firstBoxCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:id="@+id/secondBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gray"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="2. kutu"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/secondBoxCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:id="@+id/thirdBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gray"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="3. kutu"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/thirdBoxCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="1dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1">
+
+                    <LinearLayout
+                        android:id="@+id/fourthBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gray"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="4. kutu"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/fourthBoxCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_upload"
+        app:backgroundTint="@color/blue"
+        app:layout_anchor="@id/nestedScrollView"
+        app:layout_anchorGravity="bottom|end"
+        app:rippleColor="@color/dark_blue"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

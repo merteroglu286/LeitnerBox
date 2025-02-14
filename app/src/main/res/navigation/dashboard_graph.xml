@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.merteroglu286.leitnerbox.presentation.fragment.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.merteroglu286.leitnerbox.presentation.activity.main.MainActivity"
+        android:label="MainActivity" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.merteroglu286.leitnerbox.presentation.fragment.history.HistoryFragment"
+        android:label="HistoryFragment" />
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.merteroglu286.leitnerbox.presentation.fragment.image.ImageFragment"
+        android:label="ImageFragment">
+        <argument
+            android:name="uriString"
+            app:argType="string" />
+        <argument
+            android:name="urlString"
+            app:argType="string" />
+    </fragment>
+</navigation>

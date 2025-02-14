@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.merteroglu286.leitnerbox.presentation.fragment.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_authActivity"
+            app:destination="@id/authActivity"
+            />
+        <action
+            android:id="@+id/action_splashFragment_to_dashboardActivity"
+            app:destination="@id/dashboardActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/authActivity"
+        android:name="com.merteroglu286.leitnerbox.presentation.activity.auth.AuthActivity"
+        android:label="AuthActivity" />
+    <activity
+        android:id="@+id/dashboardActivity"
+        android:name="com.merteroglu286.leitnerbox.presentation.activity.dashboard.DashboardActivity"
+        android:label="DashboardActivity" />
+</navigation>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.merteroglu286.leitnerbox.presentation.fragment.image.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Control Buttons: Undo, Redo, Eraser, Pen -->
+    <LinearLayout
+        android:id="@+id/controlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/drawingView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/undoButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_undo"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitCenter"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/redoButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_redo"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitCenter"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/penButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_pencil"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitCenter"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/eraserButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_eraser"
+            android:background="?android:attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Stroke Width Slider -->
+    <LinearLayout
+        android:id="@+id/strokeWidthLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/controlButtons">
+
+        <TextView
+            android:id="@+id/strokeWidthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stroke Width"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <SeekBar
+            android:id="@+id/strokeWidthSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="50"
+            android:progress="10"/>
+    </LinearLayout>
+
+    <!-- Color Palette -->
+    <LinearLayout
+        android:id="@+id/colorPalette"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/strokeWidthLayout"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/blackColor"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/color_circle_black"
+            android:layout_margin="8dp"/>
+
+        <View
+            android:id="@+id/redColor"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/color_circle_red"
+            android:layout_margin="8dp"/>
+
+        <View
+            android:id="@+id/blueColor"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/color_circle_blue"
+            android:layout_margin="8dp"/>
+
+        <View
+            android:id="@+id/greenColor"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/color_circle_green"
+            android:layout_margin="8dp"/>
+
+        <View
+            android:id="@+id/yellowColor"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/color_circle_yellow"
+            android:layout_margin="8dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kaydet"
+        style="@style/BlueButtonStyle"
+        app:layout_constraintTop_toBottomOf="@id/colorPalette"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

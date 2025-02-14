@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Leitner Box</string>
+
+    <string name="msg_token_fmt">asd</string>
+</resources>

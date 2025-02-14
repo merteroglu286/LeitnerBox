@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "463832392482",
+    "project_id": "leitner-box-7b113",
+    "storage_bucket": "leitner-box-7b113.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463832392482:android:1f0c16bd78305d6507bb7b",
+        "android_client_info": {
+          "package_name": "com.merteroglu286.leitnerbox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACF6bP49PZ5j1wY4j5cPYASPR_cFAjWL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
