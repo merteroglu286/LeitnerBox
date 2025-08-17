@@ -1,32 +1,43 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    id(BuildPlugins.ANDROID_APPLICATION)
+    id(BuildPlugins.KOTLIN_ANDROID)
+    id(BuildPlugins.KOTLIN_COMPOSE)
 }
 
 android {
-    namespace = "com.merteroglu286.leitnerbox"
-    compileSdk = 36
+    namespace = BuildConfig.APP_ID
+    compileSdk = BuildConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.merteroglu286.leitnerbox"
-        minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = BuildConfig.APP_ID
+        minSdk = BuildConfig.MIN_SDK_VERSION
+        targetSdk = BuildConfig.TARGET_SDK_VERSION
+        versionCode = ReleaseConfig.VERSION_CODE
+        versionName = ReleaseConfig.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = TestBuildConfig.TEST_INSTRUMENTATION_RUNNER
+    }
+
+    signingConfigs {
+        BuildSigning.Release(project).create(this)
+        BuildSigning.Debug(project).create(this)
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+
+        BuildCreator.Debug().create(this).apply {
+            signingConfig = signingConfigs.getByName(SigningTypes.DEBUG)
+        }
+
+        BuildCreator.Release().create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName(SigningTypes.RELEASE)
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -41,19 +52,9 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    androidx()
+
+    testDependencies()
+    testImplDependencies()
+    debugDependencies()
 }

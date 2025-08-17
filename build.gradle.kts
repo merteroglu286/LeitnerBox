@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.compose) apply false
+//    id(BuildPlugins.ANDROID_APPLICATION) version DepsVersions.AGP apply false
+//    id(BuildPlugins.KOTLIN_ANDROID) version DepsVersions.KOTLIN apply false
+//    id(BuildPlugins.KOTLIN_COMPOSE) version DepsVersions.KOTLIN apply false
+//    id(BuildPlugins.DAGGER_HILT_ANDROID) version DepsVersions.HILT apply false
+//    id(BuildPlugins.KSP) version DepsVersions.KSP apply false
 }

@@ -1,0 +1,18 @@
+object DepsVersions {
+    const val AGP = "8.9.3"
+    const val KOTLIN = "2.2.10"
+    const val CORE_KTX = "1.16.0"
+    const val LIFECYCLE_RUNTIME_KTX = "2.9.2"
+    const val ACTIVITY_COMPOSE = "1.10.1"
+    const val COMPOSE_BOM = "2025.07.00"
+    const val COMPOSE_UI = "1.8.3"
+    const val MATERIAL3 = "1.3.2"
+    const val JUNIT = "4.13.2"
+    const val JUNIT_VERSION = "1.3.0"
+    const val ESPRESSO_CORE = "3.7.0"
+    const val NAVIGATION_COMPOSE = "2.9.3"
+    const val HILT = "2.56.2"
+    const val HILT_COMPOSE = "1.2.0"
+    const val KSP = "2.2.10-2.0.2"
+    const val ROOM = "2.7.2"
+}
