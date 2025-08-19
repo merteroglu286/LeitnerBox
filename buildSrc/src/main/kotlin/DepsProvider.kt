@@ -25,20 +25,35 @@ fun DependencyHandler.hilt(){
 //    ksp(Deps.HILT_AGP)
 }
 
+fun DependencyHandler.okHttp(){
+    implementation(Deps.OKHTTP)
+    implementation(Deps.OKHTTP_LOGGING_INTERCEPTOR)
+}
+
+fun DependencyHandler.retrofit(){
+    implementation(Deps.RETROFIT)
+    implementation(Deps.RETROFIT_CONVERTER_GSON)
+    implementation(Deps.RETROFIT_KOTLIN_COROUTINES_ADAPTER)
+}
+
+fun DependencyHandler.dataModule(){
+    moduleImplementation(Modules.DATA)
+}
+
 fun DependencyHandler.authModule(){
     moduleImplementation(Modules.AUTH)
 }
 
-fun DependencyHandler.testDependencies(){
+fun DependencyHandler.testDeps(){
     testImplementation(TestDependencies.JUNIT)
 }
 
-fun DependencyHandler.testImplDependencies(){
+fun DependencyHandler.testImplDeps(){
     androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
     androidTestImplementation(TestDependencies.ANDROIDX_ESPRESSO_CORE)
     androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST)
 }
-fun DependencyHandler.debugDependencies(){
+fun DependencyHandler.debugDeps(){
     debugImplementation(Deps.ANDROIDX_UI_TOOLING)
     debugImplementation(TestDependencies.ANDROIDX_UI_TEST_MANIFEST)
 }

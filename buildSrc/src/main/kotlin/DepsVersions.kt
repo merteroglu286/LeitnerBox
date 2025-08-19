@@ -15,4 +15,7 @@ object DepsVersions {
     const val HILT_COMPOSE = "1.2.0"
     const val KSP = "2.2.10-2.0.2"
     const val ROOM = "2.7.2"
+    const val OKHTTP = "5.1.0"
+    const val RETROFIT = "2.9.0"
+    const val RETROFIT_KOTLIN_COROUTINES_ADAPTER = "0.9.2"
 }

@@ -16,6 +16,7 @@ class SharedLibraryGradlePlugin : Plugin<Project> {
     private fun Project.addPluginConfigurations(){
         plugins.apply(BuildPlugins.KOTLIN_ANDROID)
         plugins.apply(BuildPlugins.KSP)
+        plugins.apply(BuildPlugins.KOTLIN_COMPOSE)
     }
 
     private fun Project.addAndroidConfigurations(){
@@ -34,11 +35,11 @@ class SharedLibraryGradlePlugin : Plugin<Project> {
 
             buildTypes {
 
-                BuildCreator.Debug().createLibrary(this).apply {
+                BuildCreator.Debug(project).createLibrary(this).apply {
                     signingConfig = signingConfigs.getByName(SigningTypes.DEBUG)
                 }
 
-                BuildCreator.Release().createLibrary(this).apply {
+                BuildCreator.Release(project).createLibrary(this).apply {
                     proguardFiles(
                         getDefaultProguardFile("proguard-android-optimize.txt"),
                         "proguard-rules.pro"

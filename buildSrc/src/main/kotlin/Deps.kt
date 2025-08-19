@@ -19,4 +19,11 @@ object Deps {
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${DepsVersions.ROOM}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${DepsVersions.ROOM}"
     const val ROOM_KTX = "androidx.room:room-ktx:${DepsVersions.ROOM}"
+
+    const val OKHTTP = "com.squareup.okhttp3:okhttp:${DepsVersions.OKHTTP}"
+    const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${DepsVersions.OKHTTP}"
+
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:${DepsVersions.RETROFIT}"
+    const val RETROFIT_CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${DepsVersions.RETROFIT}"
+    const val RETROFIT_KOTLIN_COROUTINES_ADAPTER = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${DepsVersions.RETROFIT_KOTLIN_COROUTINES_ADAPTER}"
 }

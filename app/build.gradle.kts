@@ -25,11 +25,11 @@ android {
 
     buildTypes {
 
-        BuildCreator.Debug().create(this).apply {
+        BuildCreator.Debug(project).create(this).apply {
             signingConfig = signingConfigs.getByName(SigningTypes.DEBUG)
         }
 
-        BuildCreator.Release().create(this).apply {
+        BuildCreator.Release(project).create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -47,14 +47,17 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
 dependencies {
 
+    dataModule()
+
     androidx()
 
-    testDependencies()
-    testImplDependencies()
-    debugDependencies()
+    testDeps()
+    testImplDeps()
+    debugDeps()
 }
