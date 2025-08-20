@@ -1,4 +1,4 @@
-package com.merteroglu286.data
+package com.merteroglu286.data.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

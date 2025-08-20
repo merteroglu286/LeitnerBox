@@ -1,47 +1,28 @@
-package com.merteroglu286.data
+package com.merteroglu286.data.di
 
+import com.merteroglu286.data.BuildConfig
+import com.merteroglu286.data.constants.HEADER_INTERCEPTOR_TAG
+import com.merteroglu286.data.constants.LOGGING_INTERCEPTOR_TAG
+import com.merteroglu286.data.interceptors.AUTHORIZATION_HEADER
+import com.merteroglu286.data.interceptors.CLIENT_ID_HEADER
+import com.merteroglu286.data.interceptors.HeaderInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Call
 import okhttp3.Interceptor
-import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.Locale
-import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+class InterceptorModule {
 
     @Provides
     @Singleton
-    @Named("Language")
-    fun provideLanguage(): () -> Locale {
-        return { Locale.ENGLISH}
-    }
-
-    @Provides
-    @Singleton
-    @Named("AccessToken")
-    fun provideAccessToken(): () -> String? {
-        return {""}
-    }
-
-    @Provides
-    @Singleton
-    @Named("ClientId")
-    fun provideClientId():String {
-        return ""
-    }
-
-
-    @Provides
-    @Singleton
-    @Named("HeaderInterceptor")
+    @Named(HEADER_INTERCEPTOR_TAG)
     fun provideHeaderInterceptor(
         @Named("ClientId") clientId: String,
         @Named("AccessToken") accessTokenProvider: () -> String?,
@@ -56,7 +37,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    @Named("OkHttpLoggingInterceptor")
+    @Named(LOGGING_INTERCEPTOR_TAG)
     fun provideOkHttpLoggingInterceptor(): Interceptor {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = if (BuildConfig.DEBUG) {
@@ -65,7 +46,7 @@ class NetworkModule {
             HttpLoggingInterceptor.Level.NONE
         }
 
-        if (!BuildConfig.DEBUG){
+        if (!BuildConfig.DEBUG) {
             interceptor.redactHeader(CLIENT_ID_HEADER)
             interceptor.redactHeader(AUTHORIZATION_HEADER)
         }
@@ -73,16 +54,4 @@ class NetworkModule {
         return interceptor
     }
 
-    @Provides
-    @Singleton
-    fun provideOkHttpCallFactory(interceptor: Interceptor): Call.Factory {
-        return OkHttpClient.Builder().addInterceptor(interceptor)
-            .retryOnConnectionFailure(true)
-            .followRedirects(false)
-            .followSslRedirects(false)
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .build()
-    }
 }
