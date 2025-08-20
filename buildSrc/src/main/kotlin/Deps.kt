@@ -25,5 +25,4 @@ object Deps {
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${DepsVersions.RETROFIT}"
     const val RETROFIT_CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${DepsVersions.RETROFIT}"
-    const val RETROFIT_KOTLIN_COROUTINES_ADAPTER = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${DepsVersions.RETROFIT_KOTLIN_COROUTINES_ADAPTER}"
 }

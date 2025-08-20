@@ -33,7 +33,6 @@ fun DependencyHandler.okHttp(){
 fun DependencyHandler.retrofit(){
     implementation(Deps.RETROFIT)
     implementation(Deps.RETROFIT_CONVERTER_GSON)
-    implementation(Deps.RETROFIT_KOTLIN_COROUTINES_ADAPTER)
 }
 
 fun DependencyHandler.dataModule(){

@@ -1,6 +1,5 @@
 package com.merteroglu286.data.di
 
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.merteroglu286.data.BuildConfig
 import com.merteroglu286.data.OkHttpClientProvider
 import com.merteroglu286.data.factory.ServiceFactory
@@ -53,7 +52,6 @@ class NetworkModule {
         val builder = Retrofit.Builder()
             .baseUrl("")
             .client(okHttpClient)
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
 
         return builder.build()
     }
