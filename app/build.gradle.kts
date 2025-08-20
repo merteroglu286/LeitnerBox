@@ -54,6 +54,7 @@ android {
 dependencies {
 
     dataModule()
+    authModule()
 
     androidx()
 

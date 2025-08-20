@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "LeitnerBox"
 include(":app")
 include(":core:data")
+include(":feature:auth")
