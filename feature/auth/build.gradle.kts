@@ -11,9 +11,11 @@ android {
 
 dependencies {
 
+    dataModule()
+
     androidx()
     hilt()
-    hilt()
+    retrofit()
     testDeps()
     testImplDeps()
     debugDeps()
