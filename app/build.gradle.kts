@@ -2,6 +2,8 @@ plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.KOTLIN_COMPOSE)
+    id(BuildPlugins.KSP)
+    id(BuildPlugins.DAGGER_HILT_ANDROID)
 }
 
 android {
@@ -57,6 +59,7 @@ dependencies {
     authModule()
 
     androidx()
+    hilt()
 
     testDeps()
     testImplDeps()

@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 
-class NetworkMonitorImplementer(context: Context) : NetworkMonitorInterface {
+class NetworkMonitorImpl(context: Context) : NetworkMonitorInterface {
 
     private val connectivityManager: ConnectivityManager =
         context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

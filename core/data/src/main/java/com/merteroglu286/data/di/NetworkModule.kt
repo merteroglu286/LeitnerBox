@@ -1,7 +1,11 @@
 package com.merteroglu286.data.di
 
+import android.content.Context
+import com.google.gson.Gson
 import com.merteroglu286.data.BuildConfig
 import com.merteroglu286.data.OkHttpClientProvider
+import com.merteroglu286.data.connectivity.NetworkMonitorImpl
+import com.merteroglu286.data.connectivity.NetworkMonitorInterface
 import com.merteroglu286.data.factory.ServiceFactory
 import com.merteroglu286.data.okhttp.OkHttpClientProviderInterface
 import dagger.Module
@@ -19,6 +23,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson {
+        return Gson()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNetworkMonitoringInterface(context: Context): NetworkMonitorInterface {
+        return NetworkMonitorImpl(context)
+    }
 
     @Provides
     @Singleton
