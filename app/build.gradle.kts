@@ -62,8 +62,10 @@ android {
 dependencies {
 
     dataModule()
-    dataStoreModule()
     authModule()
+
+    dataStoreModule()
+    dataStore()
 
     androidx()
     hilt()
