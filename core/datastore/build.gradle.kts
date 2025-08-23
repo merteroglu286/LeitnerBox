@@ -1,20 +1,15 @@
 plugins {
     id(BuildPlugins.ANDROID_LIBRARY)
-    id(BuildPlugins.DAGGER_HILT_ANDROID)
 }
 
 apply<SharedLibraryGradlePlugin>()
 
 android {
-    namespace = "com.merteroglu286.data"
+    namespace = "com.merteroglu286.datastore"
 }
 
 dependencies {
 
-    androidx()
-    hilt()
-    okHttp()
-    retrofit()
     dataStore()
 
     testDeps()

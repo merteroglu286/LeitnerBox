@@ -25,4 +25,8 @@ object Deps {
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${DepsVersions.RETROFIT}"
     const val RETROFIT_CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${DepsVersions.RETROFIT}"
+
+    const val DATA_STORE = "androidx.datastore:datastore:${DepsVersions.DATA_STORE}"
+    const val KOTLIN_COLLECTIONS = "org.jetbrains.kotlinx:kotlinx-collections-immutable:${DepsVersions.KOTLIN_COLLECTIONS}"
+    const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${DepsVersions.KOTLIN_SERIALIZATION}"
 }

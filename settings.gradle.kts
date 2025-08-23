@@ -23,3 +23,4 @@ rootProject.name = "LeitnerBox"
 include(":app")
 include(":core:data")
 include(":feature:auth")
+include(":core:datastore")

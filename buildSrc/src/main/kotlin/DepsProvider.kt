@@ -17,6 +17,12 @@ fun DependencyHandler.room(){
     ksp(Deps.ROOM_COMPILER)
 }
 
+fun DependencyHandler.dataStore(){
+    implementation(Deps.DATA_STORE)
+    implementation(Deps.KOTLIN_COLLECTIONS)
+    implementation(Deps.KOTLIN_SERIALIZATION)
+}
+
 fun DependencyHandler.hilt(){
     implementation(Deps.HILT_ANDROID)
 //    implementation(Deps.HILT_COMPOSE)
@@ -37,6 +43,10 @@ fun DependencyHandler.retrofit(){
 
 fun DependencyHandler.dataModule(){
     moduleImplementation(Modules.DATA)
+}
+
+fun DependencyHandler.dataStoreModule(){
+    moduleImplementation(Modules.DATA_STORE)
 }
 
 fun DependencyHandler.authModule(){

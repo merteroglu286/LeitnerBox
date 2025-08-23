@@ -17,5 +17,7 @@ object DepsVersions {
     const val ROOM = "2.7.2"
     const val OKHTTP = "5.1.0"
     const val RETROFIT = "2.9.0"
-    const val RETROFIT_KOTLIN_COROUTINES_ADAPTER = "0.9.2"
+    const val DATA_STORE = "1.1.7"
+    const val KOTLIN_COLLECTIONS = "0.4.0"
+    const val KOTLIN_SERIALIZATION = "1.9.0"
 }
