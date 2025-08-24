@@ -6,4 +6,5 @@ object BuildPlugins {
     const val KSP = "com.google.devtools.ksp"
     const val DAGGER_HILT_ANDROID = "com.google.dagger.hilt.android"
     const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlin.plugin.serialization"
+    const val GOOGLE_PROTOBUF = "com.google.protobuf"
 }

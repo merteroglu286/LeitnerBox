@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.merteroglu286.proto";
+option java_multiple_files = true;
+
+message Session{
+    string access_token = 1;
+    string refresh_token = 2;
+    string user_id = 3;
+}
+
+message Preferences{
+    string language = 1;
+    string is_app_lock_enabled = 2;
+    string notification_count = 3;
+    string money_balance = 4;
+}

@@ -63,8 +63,9 @@ dependencies {
 
     dataModule()
     authModule()
-
     dataStoreModule()
+    protoDataStoreModule()
+
     dataStore()
 
     androidx()

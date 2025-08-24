@@ -23,6 +23,12 @@ fun DependencyHandler.dataStore(){
     implementation(Deps.KOTLIN_SERIALIZATION)
 }
 
+fun DependencyHandler.protoDataStore(){
+    implementation(Deps.DATA_STORE)
+    implementation(Deps.PROTOBUF_JAVA_LITE)
+    implementation(Deps.PROTOBUF_KOTLIN_LITE)
+}
+
 fun DependencyHandler.hilt(){
     implementation(Deps.HILT_ANDROID)
 //    implementation(Deps.HILT_COMPOSE)
@@ -47,6 +53,10 @@ fun DependencyHandler.dataModule(){
 
 fun DependencyHandler.dataStoreModule(){
     moduleImplementation(Modules.DATA_STORE)
+}
+
+fun DependencyHandler.protoDataStoreModule(){
+    moduleImplementation(Modules.PROTO_DATA_STORE)
 }
 
 fun DependencyHandler.authModule(){

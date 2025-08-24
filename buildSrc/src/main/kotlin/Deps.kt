@@ -29,4 +29,8 @@ object Deps {
     const val DATA_STORE = "androidx.datastore:datastore:${DepsVersions.DATA_STORE}"
     const val KOTLIN_COLLECTIONS = "org.jetbrains.kotlinx:kotlinx-collections-immutable:${DepsVersions.KOTLIN_COLLECTIONS}"
     const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${DepsVersions.KOTLIN_SERIALIZATION}"
+
+    const val PROTOBUF_JAVA_LITE = "com.google.protobuf:protobuf-javalite:${DepsVersions.PROTOBUF_JAVA_LITE}"
+    const val PROTOBUF_KOTLIN_LITE = "com.google.protobuf:protobuf-kotlin-lite:${DepsVersions.PROTOBUF_KOTLIN_LITE}"
+    const val PROTOC = "com.google.protobuf:protoc:${DepsVersions.PROTOC}"
 }
