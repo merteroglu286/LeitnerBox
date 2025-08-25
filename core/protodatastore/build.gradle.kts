@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.ANDROID_LIBRARY)
     id(BuildPlugins.GOOGLE_PROTOBUF)
+    id(BuildPlugins.DAGGER_HILT_ANDROID)
 }
 
 apply<SharedLibraryGradlePlugin>()
@@ -32,6 +33,7 @@ android {
 dependencies {
 
     protoDataStore()
+    hilt()
 
     testDeps()
     testImplDeps()

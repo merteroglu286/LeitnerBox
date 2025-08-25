@@ -11,7 +11,7 @@ message Session{
 
 message Preferences{
     string language = 1;
-    string is_app_lock_enabled = 2;
-    string notification_count = 3;
-    string money_balance = 4;
+    bool is_app_lock_enabled = 2;
+    int32 notification_count = 3;
+    int64 money_balance = 4;
 }
