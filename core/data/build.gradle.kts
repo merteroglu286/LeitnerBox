@@ -11,6 +11,8 @@ android {
 
 dependencies {
 
+    protoDataStoreModule()
+
     androidx()
     hilt()
     okHttp()
