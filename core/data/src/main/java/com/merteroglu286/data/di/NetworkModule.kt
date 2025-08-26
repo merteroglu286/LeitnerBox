@@ -6,8 +6,13 @@ import com.merteroglu286.data.BuildConfig
 import com.merteroglu286.data.OkHttpClientProvider
 import com.merteroglu286.data.connectivity.NetworkMonitorImpl
 import com.merteroglu286.data.connectivity.NetworkMonitorInterface
+import com.merteroglu286.data.constants.AUTHENTICATION_INTERCEPTOR_TAG
+import com.merteroglu286.data.constants.CONNECTIVITY_INTERCEPTOR_TAG
+import com.merteroglu286.data.constants.HEADER_INTERCEPTOR_TAG
+import com.merteroglu286.data.constants.LOGGING_INTERCEPTOR_TAG
 import com.merteroglu286.data.factory.ServiceFactory
 import com.merteroglu286.data.okhttp.OkHttpClientProviderInterface
+import com.merteroglu286.data.service.SessionService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,13 +50,17 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpCallFactory(
-        @Named("HeaderInterceptor") headerInterceptor: Interceptor,
-        @Named("OkHttpLoggingInterceptor") okHttpLoggingInterceptor: Interceptor,
+        @Named(HEADER_INTERCEPTOR_TAG) headerInterceptor: Interceptor,
+        @Named(LOGGING_INTERCEPTOR_TAG) okHttpLoggingInterceptor: Interceptor,
+        @Named(AUTHENTICATION_INTERCEPTOR_TAG) authenticationInterceptor: Interceptor,
+        @Named(CONNECTIVITY_INTERCEPTOR_TAG) connectivityInterceptor: Interceptor,
         okHttpClientProvider: OkHttpClientProvider
     ): Call.Factory {
         return okHttpClientProvider.getOkHttpClient(BuildConfig.PIN_CERTIFICATE)
             .addInterceptor(headerInterceptor)
             .addInterceptor(okHttpLoggingInterceptor)
+            .addInterceptor(authenticationInterceptor)
+            .addInterceptor(connectivityInterceptor)
             .retryOnConnectionFailure(true)
             .followRedirects(false)
             .followSslRedirects(false)
@@ -76,6 +85,12 @@ class NetworkModule {
     @Singleton
     fun provideServiceFactory(retrofit: Retrofit): ServiceFactory {
         return ServiceFactory(retrofit)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSessionService(serviceFactory: ServiceFactory): SessionService {
+        return serviceFactory.create(SessionService::class.java)
     }
 
 }

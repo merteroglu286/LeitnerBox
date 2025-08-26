@@ -6,7 +6,6 @@ import com.merteroglu286.auth.data.source.LoginRemote
 import com.merteroglu286.auth.data.source.LoginRemoteImpl
 import com.merteroglu286.auth.domain.mapper.LoginMapper
 import com.merteroglu286.auth.domain.mapper.LoginMapperImpl
-import com.merteroglu286.data.connectivity.NetworkMonitorInterface
 import com.merteroglu286.data.constants.DISPATCHER_DEFAULT_TAG
 import com.merteroglu286.data.constants.USER_ID_TAG
 import com.merteroglu286.data.factory.ServiceFactory
@@ -34,10 +33,9 @@ class NetworkModule {
     fun provideNetworkDataSource(
         loginService: LoginService,
         gson: Gson,
-        networkMonitorInterface: NetworkMonitorInterface,
         @Named(USER_ID_TAG) userIdProvider: () -> String
     ): NetworkDataSource<LoginService> {
-        return NetworkDataSource(loginService, gson, networkMonitorInterface, userIdProvider)
+        return NetworkDataSource(loginService, gson, userIdProvider)
     }
 
     @Provides
