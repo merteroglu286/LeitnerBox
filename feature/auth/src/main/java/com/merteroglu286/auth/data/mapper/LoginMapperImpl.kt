@@ -1,4 +1,4 @@
-package com.merteroglu286.auth.domain.mapper
+package com.merteroglu286.auth.data.mapper
 
 import com.merteroglu286.auth.data.responses.LoginResponse
 import com.merteroglu286.auth.domain.model.User

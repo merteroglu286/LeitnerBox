@@ -1,4 +1,4 @@
-package com.merteroglu286.data.result
+package com.merteroglu286.domain.result
 
 import kotlinx.coroutines.isActive
 import kotlin.coroutines.coroutineContext

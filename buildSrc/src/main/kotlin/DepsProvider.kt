@@ -59,6 +59,10 @@ fun DependencyHandler.protoDataStoreModule(){
     moduleImplementation(Modules.PROTO_DATA_STORE)
 }
 
+fun DependencyHandler.domainModule(){
+    moduleImplementation(Modules.DOMAIN)
+}
+
 fun DependencyHandler.authModule(){
     moduleImplementation(Modules.AUTH)
 }

@@ -1,17 +1,7 @@
 package com.merteroglu286.data.error
 
 import com.google.gson.Gson
-import com.merteroglu286.data.model.ErrorMessage
 import com.merteroglu286.data.response.ErrorResponse
-
-// mapping errorResponse to ErrorMessage model
-fun ErrorResponse.toDomain(code: Int): ErrorMessage {
-    return ErrorMessage(
-        code = code,
-        message = errorMessage.orEmpty(),
-        errorFieldList = errorFieldList ?: emptyList()
-    )
-}
 
 // create default error response
 fun getDefaultErrorResponse() = ErrorResponse("", "", emptyList())

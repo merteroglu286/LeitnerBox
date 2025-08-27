@@ -4,8 +4,8 @@ import com.google.gson.Gson
 import com.merteroglu286.auth.data.service.LoginService
 import com.merteroglu286.auth.data.source.LoginRemote
 import com.merteroglu286.auth.data.source.LoginRemoteImpl
-import com.merteroglu286.auth.domain.mapper.LoginMapper
-import com.merteroglu286.auth.domain.mapper.LoginMapperImpl
+import com.merteroglu286.auth.data.mapper.LoginMapper
+import com.merteroglu286.auth.data.mapper.LoginMapperImpl
 import com.merteroglu286.data.constants.DISPATCHER_DEFAULT_TAG
 import com.merteroglu286.data.constants.USER_ID_TAG
 import com.merteroglu286.data.factory.ServiceFactory

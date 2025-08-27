@@ -1,6 +1,7 @@
-package com.merteroglu286.data.result
+package com.merteroglu286.domain.result
 
-import com.merteroglu286.data.model.ErrorMessage
+import com.merteroglu286.domain.model.ErrorMessage
+import com.merteroglu286.domain.usecase.UseCase
 
 sealed class OutCome<T> {
     abstract fun isSuccess(): Boolean

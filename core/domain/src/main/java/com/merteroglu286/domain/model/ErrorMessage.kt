@@ -1,4 +1,4 @@
-package com.merteroglu286.data.model
+package com.merteroglu286.domain.model
 
 data class ErrorMessage(
     val code: Int,

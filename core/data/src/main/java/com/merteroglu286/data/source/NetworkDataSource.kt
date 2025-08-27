@@ -4,10 +4,10 @@ import com.google.gson.Gson
 import com.merteroglu286.data.constants.HEADER_LOCATION
 import com.merteroglu286.data.error.getDefaultErrorResponse
 import com.merteroglu286.data.error.getErrorResponse
-import com.merteroglu286.data.error.toDomain
 import com.merteroglu286.data.interceptors.NoConnectivityException
+import com.merteroglu286.data.mapper.toDomain
 import com.merteroglu286.data.response.ErrorResponse
-import com.merteroglu286.data.result.OutCome
+import com.merteroglu286.domain.result.OutCome
 import com.merteroglu286.data.source.DataSource.Companion.NO_INTERNET
 import com.merteroglu286.data.source.DataSource.Companion.SEE_OTHERS
 import com.merteroglu286.data.source.DataSource.Companion.SSL_PINNING

@@ -11,6 +11,7 @@ android {
 
 dependencies {
 
+    domainModule()
     protoDataStoreModule()
 
     androidx()
